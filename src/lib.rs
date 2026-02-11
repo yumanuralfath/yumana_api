@@ -33,7 +33,7 @@ pub fn rocket() -> rocket::Rocket<rocket::Build> {
     let allowed_origins = if environment == "DEVELOPMENT" {
         AllowedOrigins::all()
     } else {
-        AllowedOrigins::some_exact(&["http://localhost:3000", "https://www.yumana.my.id"])
+        AllowedOrigins::some_regex(&[r"^https://.*\.yumana\.my\.id$"])
     };
 
     let cors = rocket_cors::CorsOptions {
