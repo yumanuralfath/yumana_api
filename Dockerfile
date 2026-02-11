@@ -1,5 +1,5 @@
 # Menggunakan image Rust sebagai base image untuk build
-FROM rust:1.83.0 as builder
+FROM rust:slim
 
 # Install diesel CLI
 RUN cargo install diesel_cli --no-default-features --features postgres
